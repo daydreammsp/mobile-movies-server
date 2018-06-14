@@ -1,12 +1,13 @@
 {
-  "start": "node server/server.js",
+  
   "name": "reactnativeserver",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon --watch server server/server.js"
+    "server": "nodemon --watch server server/server.js",
+    "start": "node server/server.js"
   },
   "author": "",
   "license": "ISC",
