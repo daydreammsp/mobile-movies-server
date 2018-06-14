@@ -30,6 +30,7 @@ const request = require("request");
 //   res.send(results)
 // });
     // })
+
     router.post('/api', (req, res) => {
         let searchMovie = req.body[0]
         console.log('router request api', searchMovie )
@@ -51,9 +52,18 @@ const request = require("request");
     request(options, function (error, response, body) {
       if (error) throw new Error(error);
     let newBody = JSON.parse(body)
+    console.log(newBody)
     let results = newBody.results.map( (item)=>{
-        return item.title
+        return {id: item.id,
+                title: item.title, 
+               voteCount: item.vote_count, 
+               voteAverage: item.vote_average,
+               posterPath: item.poster_path,
+               overview: item.overview,
+               releaseDate: item.release_date}
+        
     })
+    
       console.log('results', results);
       res.send(results)
     });
