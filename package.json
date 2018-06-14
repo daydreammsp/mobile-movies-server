@@ -1,4 +1,5 @@
 {
+  "start": "node server/server.js",
   "name": "reactnativeserver",
   "version": "1.0.0",
   "description": "",
